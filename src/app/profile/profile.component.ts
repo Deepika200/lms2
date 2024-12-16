@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from 'express';
+// import { Router } from 'express';
 import { ApiService } from '../api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   student: any = {};
 
 
-  constructor(private router: Router,private apiService:ApiService,private route:ActivatedRoute) {}
+  constructor(private router:Router,private apiService:ApiService,private route:ActivatedRoute) {}
 
 
 ngOnInit(): void {
@@ -23,6 +23,10 @@ ngOnInit(): void {
       this.fetchStudentData();
     }
   })
+}
+
+navigateTo(route: string): void {
+  this.router.navigate([route, this.userId]);
 }
 
 fetchStudentData() {

@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   student: any = {};
 
 
-  constructor(private router: Router,private apiService:ApiService,private route:ActivatedRoute) {}
+  constructor(private router:Router,private apiService:ApiService,private route:ActivatedRoute) {}
 
 ngOnInit(): void {
   this.route.paramMap.subscribe((params)=>{
@@ -23,7 +23,7 @@ ngOnInit(): void {
   })
 }
   navigateTo(route: string): void {
-    this.router.navigate([route]); // Navigate to the selected page
+    this.router.navigate([route,this.userId]); // Navigate to the selected page
   }
 
   fetchStudentData() {

@@ -16,13 +16,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   {path:'dashboard/:userId',component:DashboardComponent},
-  { path: 'courses', component: CoursesComponent },
-  { path: 'assignments', component: AssignmentsComponent },
-  { path: 'performance', component: PerformanceComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'chat', component: ChatComponent },
-  {path:'attendance',component:AttendanceComponent},
-  {path:'fees',component:FeesComponent}
+  { path: 'courses/:userId', component: CoursesComponent },
+  { path: 'assignments/:userId', component: AssignmentsComponent },
+  { path: 'performance/:userId', component: PerformanceComponent },
+  { path: 'profile/:userId', component: ProfileComponent },
+  { path: 'chat/:userId', component: ChatComponent },
+  {path:'attendance/:userId',component:AttendanceComponent},
+  {path:'fees/:userId',component:FeesComponent}
 
   // { path: 'student-details/:userId', component: StudentDetailsComponent },
   // { path: 'course-details/:courseId', component: CourseDetailsComponent },
