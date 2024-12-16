@@ -26,8 +26,8 @@ ngOnInit(): void {
 }
 
 navigateTo(route: string): void {
-  this.router.navigate([route, this.userId]);
-}
+    this.router.navigate([route, this.userId]);
+  }
 
 fetchStudentData() {
   this.apiService.getStudentByUserId(this.userId).subscribe(

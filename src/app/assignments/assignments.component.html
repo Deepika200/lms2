@@ -1,1 +1,35 @@
-<p>assignments works!</p>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Assignment ID</th>
+        <th>Assignment Name</th>
+        <th>Date</th>
+        <th>Last Submission Date</th>
+        <th>Last Time</th>
+        <th>Assignment PDF</th>
+        <th>Upload</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let assignment of assignments">
+        <td>{{ assignment.id }}</td>
+        <td>{{ assignment.name }}</td>
+        <td>{{ assignment.date }}</td>
+        <td>{{ assignment.lastDate }}</td>
+        <td>{{ assignment.lastTime }}</td>
+        <td>
+          <a [href]="assignment.pdfUrl" target="_blank">View PDF</a>
+        </td>
+        <td>
+            <input 
+            type="file" 
+            (change)="uploadFile($event, assignment.id)" 
+            [disabled]="isSubmissionClosed(assignment.lastDate)" 
+          />
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

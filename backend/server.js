@@ -6,7 +6,7 @@ const dashboardRouter = require('./routes/dashboardRoutes') // Assuming auth-rou
 const cors = require('cors');
 app.use(cors());  // Enable CORS
 // const studentRoutes = require('./routes/studentRoutes');
-// const courseRoutes = require('./routes/courseRoutes');
+const courseRoutes = require('./routes/courseRoutes');
 
 
 // Middleware to parse JSON requests
@@ -17,7 +17,7 @@ app.use('/api', authRouter);
 app.use('/api', dashboardRouter);
 
 // Add to your API
-// app.use('/api', courseRoutes);
+app.use('/api', courseRoutes);
 
 
 // Starting the server
