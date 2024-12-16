@@ -1,0 +1,50 @@
+<div class="dashboard-container">
+  <h1>Hi!, {{student?.name}}</h1>
+    <h2>Welcome to Student LMS Dashboard</h2>
+    <div class="button-grid">
+      <!-- Courses -->
+      <div class="dashboard-button" (click)="navigateTo('courses')">
+        <img src="assets/icons/courses.png" alt="Courses" />
+        <p>Courses</p>
+      </div>
+  
+      <!-- Assignments -->
+      <div class="dashboard-button" (click)="navigateTo('assignments')">
+        <img src="assets/icons/assignments.png" alt="Assignments" />
+        <p>Assignments</p>
+      </div>
+  
+      <!-- Performance -->
+      <div class="dashboard-button" (click)="navigateTo('performance')">
+        <img src="assets/icons/performance.png" alt="Performance" />
+        <p>Performance</p>
+      </div>
+  
+      <!-- Profile -->
+      <div class="dashboard-button" (click)="navigateTo('profile')">
+        <img src="assets/icons/profile.jpg" alt="Profile" />
+        <p>Profile</p>
+      </div>
+  
+      <!-- Chat -->
+      <div class="dashboard-button" (click)="navigateTo('chat')">
+        <img src="assets/icons/chat.png" alt="Chat" />
+        <p>Chat</p>
+      </div>
+
+       <!-- Attendance -->
+       <div class="dashboard-button" (click)="navigateTo('attendance')">
+        <img src="assets/icons/attendance.png" alt="Attendance" />
+        <p>Attendance</p>
+      </div>
+
+      <!--fees-->
+       <!-- Attendance -->
+       <div class="dashboard-button" (click)="navigateTo('fees')">
+        <img src="assets/icons/fees.jpg" alt="Fees" />
+        <p>Fees</p>
+      </div>
+
+    </div>
+  </div>
+  

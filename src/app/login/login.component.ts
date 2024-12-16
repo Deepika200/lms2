@@ -25,7 +25,7 @@ export class LoginComponent {
           console.log('Login successful', response);
           const userId = response.userId; // Adjust according to your actual response structure
 
-          this.router.navigate(['/student-details',userId])
+          this.router.navigate(['/dashboard',userId])
           // Navigate to the dashboard or handle success
         },
         (error) => {

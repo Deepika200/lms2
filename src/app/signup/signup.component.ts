@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';  // Ensure your API service is imported
 import { HttpClient } from '@angular/common/http';
-import { Router } from 'express';
+import { response, Router } from 'express';
 import { Route, RouterModule } from '@angular/router';
 
 @Component({
@@ -38,18 +38,32 @@ export class SignupComponent implements OnInit {
       password: this.signupForm.value.password
     };
 
-    // Send POST request to Express backend
-    this.http.post('http://localhost:5000/api/signup', this.signupForm.value).subscribe(
-      (response) => {
-        console.log('User registered successfully:', response);
-        alert('User registered successfully');
-        // Redirect to login page after successful signup
-        // this.route.navigate(['/login']);
+    this.apiService.signup(signupData).subscribe(
+      (response)=>{
+        console.log('signup succesfull',response);
+        alert('registeration sucessfull');
+
       },
-      (error) => {
-        console.error('Error occurred while registering user:', error);
-        alert("cant register user");
+      (error)=>{
+        console.error('signup failed',error);
+        alert('Signup failed!');
       }
+
     );
-  }
+
+  //   // Send POST request to Express backend
+  //   this.http.post('http://localhost:5000/api/signup', this.signupForm.value).subscribe(
+  //     (response) => {
+  //       console.log('User registered successfully:', response);
+  //       alert('User registered successfully');
+  //       // Redirect to login page after successful signup
+  //       // this.route.navigate(['/login']);
+  //     },
+  //     (error) => {
+  //       console.error('Error occurred while registering user:', error);
+  //       alert("cant register user");
+  //     }
+  //   );
+  // }
+}
 }

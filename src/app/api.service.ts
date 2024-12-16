@@ -22,7 +22,7 @@ export class ApiService {
 
 
   getStudentByUserId(userid: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/students/${userid}`);
+    return this.http.get<any>(`${this.apiUrl}/dashboard/${userid}`);
   }
 
   getCourses(): Observable<any[]> {
